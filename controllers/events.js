@@ -49,6 +49,20 @@ function newEvent(request, response){
   response.render('create-event.html', contextData);
 }
 
+function checkIntRange(request, fieldName, minVal, maxVal, contextData){
+  var value = null;
+  if (validator.isInt(request.body[fieldName]) === false) {
+    contextData.errors.push('Your ' + fieldName + ' year should be an integer.');
+  }
+  else {
+    value = parseInt(request.body[fieldName],10);
+    if (value > maxVal || value < minVal) {
+    contextData.errors.push('Your ' + fieldName + ' should be in the range of ' + minVal + '-' + maxVal);
+    }
+  }
+  return value;
+}
+
 /**
  * Controller to which new events are submitted.
  * Validates the form and adds the new event to
@@ -58,20 +72,43 @@ function saveEvent(request, response){
   var contextData = {errors: []};
 
   if (validator.isLength(request.body.title, 5, 50) === false) {
-    contextData.errors.push('Your title should be between 5 and 100 letters.');
+    contextData.errors.push('Your title should be between 5 and 50 letters.');
+  }
+  
+  var year = checkIntRange(request,'year',2015,2016,contextData);
+  var month = checkIntRange(request,'month',0,11,contextData);
+  var day = checkIntRange(request,'day',1,31,contextData);
+  var hour = checkIntRange(request,'hour',0,23,contextData);
+  var minute = parseInt(request.body.minute,10);
+ 
+  if (validator.isURL(request.body.image) === false) {
+    contextData.errors.push('That is not a valid URL for the image. Please check that again.');
+  } else {
+    if (request.body.image.match(/\.(png|gif)$/) === null) {
+      contextData.errors.push('Your image should be a PNG or GIF file.');
+    }
+  }
+  
+  if (validator.isLength(request.body.location, 5, 50) === false) {
+    contextData.errors.push('Your location should be between 5 and 50 letters.');
+  }
+  
+  if(minute == -1){
+    contextData.errors.push('Your minutes have to be at the hour or at half hour.');
   }
 
-
   if (contextData.errors.length === 0) {
+    var newId = events.all.length + 1;
     var newEvent = {
+      id: newId,
       title: request.body.title,
       location: request.body.location,
       image: request.body.image,
-      date: new Date(),
+      date: new Date(year,month,day,hour,minute,0),
       attending: []
     };
     events.all.push(newEvent);
-    response.redirect('/events');
+    response.redirect('/events/' + newId);
   }else{
     response.render('create-event.html', contextData);
   }
