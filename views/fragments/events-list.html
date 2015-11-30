@@ -22,7 +22,8 @@ var pageVariations = [
   function() {    // Variation 1: add RSVP text
    // $( 'li.event-title' ).prepend( 'RSVP ' );
    // $( ".event" ).prepend( "RSVP " );
-   $( ".event" ).prepend( document.createTextNode( "RSVP " ) );
+   // $( ".event" ).prepend( document.createTextNode( "RSVP " ) );
+   $( "li.event" ).prepend( document.createTextNode( "RSVP " ) );
   }
 ];
 
