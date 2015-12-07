@@ -5,7 +5,7 @@
   {% if errors %}
     <div class="form-errors">
       <p>Please correct the following errors!</p>
-      <ul>
+      <ul id="form-errors" class="form-errors">
         {% for error in errors %}
           <li>{{error}}</li>
         {% endfor %}
@@ -25,7 +25,6 @@
     
      <label for="hour">Event hour:</label>
     <select name="hour">
-        <option value="-1">[Select Hour]</option>
         <option value="0">00</option>
         <option value="1">01</option>
         <option value="2">02</option>
@@ -55,14 +54,12 @@
     
     <label for="minute">Event minute:</label>
     <select name="minute">
-        <option value="-1">[Select Minute]</option>
         <option value="0">:00</option>
         <option value="30">:30</option>
     </select> <br>
     
     <label for="month">Event month:</label>
     <select name="month">
-      <option value="-1">[Select Month]</option>
       <option value="0">January</option>
       <option value="1">February</option>
       <option value="2">March</option>
@@ -80,7 +77,6 @@
     
      <label for="day">Event day:</label>
     <select name="day">
-        <option value="-1">[Select Day]</option>
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -116,7 +112,6 @@
     
     <label for="year">Event year:</label>
     <select name="year">
-      <option value="-1">[Select Year]</option>
       <option value="2015">2015</option>
       <option value="2016">2016</option>
     </select>
