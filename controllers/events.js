@@ -144,6 +144,19 @@ function rsvp (request, response){
 
 }
 
+
+
+function makeDonation (request, response){
+    var contextData = {};
+    response.render('donation.html', contextData);    
+}
+
+function giveSupport (request, response){
+    var contextData = {};
+    response.render('support.html', contextData);    
+}
+
+
 function api(request, response){
   var output = {events: []};
   var search = request.query.search;
@@ -172,5 +185,7 @@ module.exports = {
   'newEvent': newEvent,
   'saveEvent': saveEvent,
   'rsvp': rsvp,
-  'api': api
+  'api': api,
+  'makeDonation': makeDonation,
+  'giveSupport' : giveSupport
 };
