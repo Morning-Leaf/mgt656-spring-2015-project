@@ -37,9 +37,9 @@
     
     var donateorsupport = Math.floor(Math.random() * 2) + 1;
     if (donateorsupport == 1) {
-       $( 'div.donate' ).append( '<a href="/events/thankyouforyourdonation">Donate</a>' );
+       $( 'div.donate' ).append( '<a href="/events/thankyouforyourdonation" class="donation">Donate</a>' );
       } else {
-        $( 'div.donate' ).append( '<a href="/events/thankyouforyoursupport">Support</a>' );
+        $( 'div.donate' ).append( '<a href="/events/thankyouforyoursupport" class="donation">Support</a>' );
       }
     }
     
