@@ -1,33 +1,120 @@
 {% extends "layout.html" %}
 
+ 	{% block header %}
+ 
+  <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/"><img src="ClubHero-logo.png" id="logo"></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/about">About Us</a>
+                    </li>
+                    <li>
+                        <a href="/events">All Events</a>
+                    </li>
+                    <li>
+                        <a href="/events/new">Create Event</a>
+                    </li>
 
-<!--
-{% block header %}
-  <header>
-    <h1>{{ title }}</h1>
-  </header>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+ {% endblock %}
+ 
+ 
+ {% block carousel %}
+<!-- Header Carousel -->
+    <header id="myCarousel" class="carousel slide">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <div class="fill" style="background-image:url('photo4.jpg');"></div>
+                <div class="carousel-caption">
+                    <h2>Pick a venue and don't forget company</h2>
+                </div>
+            </div>
+            <div class="item">
+                <div class="fill" style="background-image:url('photo2.jpg');"></div>
+                <div class="carousel-caption">
+                    <h2>Enjoy the ride</h2>
+                </div>
+            </div>
+             <div class="item">
+                <div class="fill" style="background-image:url('photo3.jpg');"></div>
+                <div class="carousel-caption">
+                    <h2>Release your senses</h2>
+                </div>
+            </div>
+            <div class="item">
+                <div class="fill" style="background-image:url('photo1.jpg');"></div>
+                <div class="carousel-caption">
+                    <h2>Find that place where you can relax</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="icon-prev"></span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="icon-next"></span>
+        </a>
+    </header>
 {% endblock %}
--->
 
-{% block mainContent %}
-  <p>
-    Welcome to {{ title }}. {{tagline}}
-  </p>
-  <img id="logo" src="TeamLogo.png">
-  <p>Here is our list of events</p>
-  <div style="border: 1px solid black">
-    {% include "fragments/events-list.html" %}
-  </div>
-  <p>
-    Check out the <a href="/about">About us</a> page
-    as well as the <a href="/events">Events</a> page.
-  </p>
-  <p>
-    <a id="new" href="/events/new">Create a new event</a>
-  </p>
+
+
+{% block mainContent %} 
+
+  
+
+ <!-- Page Content -->
+
+
+{% include "fragments/events-list.html" %}
+
+
+
+ 
+
 {% endblock %}
 
- <ul>
-    <li class="event" id="event-1">...</li>
-    <li class="event" id="event-2">...</li>
-  </ul>
+
+{% block carouselconfig %}
+
+    <!-- Script to Activate the Carousel -->
+        <script>
+          $('.carousel').carousel({
+               interval: 3000 //changes the speed
+           })
+        </script>
+
+{% endblock %}
+
+  
+ 

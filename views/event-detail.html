@@ -1,6 +1,68 @@
 {% extends "layout.html" %}
 
+{% block header %}
+  <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/"><img src="../ClubHero-logo.png" id="logo"></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/about">About Us</a>
+                    </li>
+                    <li>
+                        <a href="/events">All Events</a>
+                    </li>
+                    <li>
+                        <a href="/events/new">Create Event</a>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+ {% endblock %}
+
+
+
+
+
 {% block mainContent %}
+
+<!-- Page Heading/Breadcrumbs -->
+
+    <br><br>
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Event Details
+                    <small>don't forget to rsvp!</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="/">Home</a>
+                    </li>
+                    <li class="active">Event Details</li>
+                </ol>
+            </div>
+        </div>
+        <!-- /.row -->
+
+
+
+<div class="row">
+  <div class="col-md-8">
     <h1 id="title">{{event.title}}</h1>
     <p>When: <span id="date">{{event.date}}</span></p>
     <p>Where: <span id="location">{{event.location}}</span></p>
@@ -22,12 +84,24 @@
       </ul>
     </div>
   {% endif %}
+  
+  <div class="control-group form-group">
+       <div class="controls">
   <form method="POST">
       <input type="text" name="email" id="email" placeholder="Your e-mail"/>
-      <input type="submit" value="Submit"/>
+      <input type="submit" value="Submit" class="btn btn-primary"/>
   </form>
-  &nbsp;
-  <div class="donate"><a href="/thankyouforyoursupport" class="donation"></a></div>
+  </div>
+</div>
+  
+  </div>
+  
+  <div class="col-md-4">
+  
+  <button type="button" class="btn btn-info btn-lg"><a href="/thankyouforyoursupport" class="donation"></a></button>
+  
+   </div>
+</div>
 
  <!-- Load the Content Experiment JavaScript API client for the experiment -->
   

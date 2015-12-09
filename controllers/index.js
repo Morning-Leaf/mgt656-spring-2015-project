@@ -9,7 +9,7 @@ var events = require('../models/events');
 function index (request, response) {
   var now = new Date();
   var contextData = {
-    'title': 'Morning-Leaf Event Reservation System',
+    'title': 'ClubHero - Events and Much More!',
     'tagline': 'Feel free to browse our list of events or create a new one',
     'events': []
   };

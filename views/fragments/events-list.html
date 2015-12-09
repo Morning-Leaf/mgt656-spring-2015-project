@@ -1,17 +1,39 @@
 
 
-<ul>
-  {% for event in events %}
-    <li class="event" id="event-{{event.id}}">
-      <a href="/events/{{event.id}}">{{event.title}}</a>.
-      <time datetime="{{event.date}}">{{event.date|prettyDate}}</time>
-      {{event.attending.length}} attending so far.
-    </li>
-  {% endfor %}
-</ul>
 
+ <!-- List of Events -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    Here's our list of events:
+                </h1>
+            </div>
+            {% for event in events %}
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4><i class="fa fa-fw fa-compass"></i>{{event.title}}</h4>
+                    </div>
+                    <div class="panel-body">
+                    <p align="center"><img class="img-responsive img-portfolio img-hover" src="{{event.image}}" style="width:200px;height:170px;"></p>
+                    <ul>
+                        <li class="event" id="event-{{event.id}}">
+                          <a href="/events/{{event.id}}">{{event.title}}</a>.
+                          <time datetime="{{event.date}}">{{event.date|prettyDate}}</time>
+                              {{event.attending.length}} attending so far.
+                        </li>
+                    </ul>    
+                        <p align="center"><a href="/events/{{event.id}}" class="btn btn-default">Learn More</a></p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <!-- /.row -->
 
-   <!-- Load the Content Experiment JavaScript API client for the experiment -->
+ 
+ 
+ <!-- Load the Content Experiment JavaScript API client for the experiment -->
   <script src="http://www.google-analytics.com/cx/api.js?experiment=6ZPBhbUtQz-_CT_f8MV6Rw"></script>
   
 
@@ -39,6 +61,13 @@
   }
   );
   </script>
+
+
+
+
+
+  
+  
 
 
     

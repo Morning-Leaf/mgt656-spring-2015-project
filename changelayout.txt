@@ -1,0 +1,74 @@
+On branch change-layout
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   controllers/index.js
+	modified:   models/events.js
+	new file:   public/ClubHero-logo.png
+	new file:   public/css/bootstrap.css
+	new file:   public/css/bootstrap.min.css
+	new file:   public/css/style.css
+	new file:   public/event1.gif
+	new file:   public/font-awesome/css/font-awesome.css
+	new file:   public/font-awesome/css/font-awesome.min.css
+	new file:   public/font-awesome/fonts/FontAwesome.otf
+	new file:   public/font-awesome/fonts/fontawesome-webfont.eot
+	new file:   public/font-awesome/fonts/fontawesome-webfont.svg
+	new file:   public/font-awesome/fonts/fontawesome-webfont.ttf
+	new file:   public/font-awesome/fonts/fontawesome-webfont.woff
+	new file:   public/font-awesome/less/bordered-pulled.less
+	new file:   public/font-awesome/less/core.less
+	new file:   public/font-awesome/less/fixed-width.less
+	new file:   public/font-awesome/less/font-awesome.less
+	new file:   public/font-awesome/less/icons.less
+	new file:   public/font-awesome/less/larger.less
+	new file:   public/font-awesome/less/list.less
+	new file:   public/font-awesome/less/mixins.less
+	new file:   public/font-awesome/less/path.less
+	new file:   public/font-awesome/less/rotated-flipped.less
+	new file:   public/font-awesome/less/spinning.less
+	new file:   public/font-awesome/less/stacked.less
+	new file:   public/font-awesome/less/variables.less
+	new file:   public/font-awesome/scss/_bordered-pulled.scss
+	new file:   public/font-awesome/scss/_core.scss
+	new file:   public/font-awesome/scss/_fixed-width.scss
+	new file:   public/font-awesome/scss/_icons.scss
+	new file:   public/font-awesome/scss/_larger.scss
+	new file:   public/font-awesome/scss/_list.scss
+	new file:   public/font-awesome/scss/_mixins.scss
+	new file:   public/font-awesome/scss/_path.scss
+	new file:   public/font-awesome/scss/_rotated-flipped.scss
+	new file:   public/font-awesome/scss/_spinning.scss
+	new file:   public/font-awesome/scss/_stacked.scss
+	new file:   public/font-awesome/scss/_variables.scss
+	new file:   public/font-awesome/scss/font-awesome.scss
+	new file:   public/fonts/glyphicons-halflings-regular.eot
+	new file:   public/fonts/glyphicons-halflings-regular.svg
+	new file:   public/fonts/glyphicons-halflings-regular.ttf
+	new file:   public/fonts/glyphicons-halflings-regular.woff
+	new file:   public/fonts/glyphicons-halflings-regular.woff2
+	new file:   public/js/bootstrap.js
+	new file:   public/js/bootstrap.min.js
+	new file:   public/js/jqBootstrapValidation.js
+	new file:   public/js/jquery.js
+	new file:   public/photo1.jpg
+	new file:   public/photo2.jpg
+	new file:   public/photo3.jpg
+	new file:   public/photo4.jpg
+	deleted:    public/stylesheets/style.css
+	modified:   test/mocha.opts
+	modified:   views/about.html
+	modified:   views/create-event.html
+	modified:   views/event-detail.html
+	modified:   views/event.html
+	modified:   views/fragments/events-list.html
+	new file:   views/fragments/footer.html
+	modified:   views/index.html
+	modified:   views/layout.html
+	modified:   views/support.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	changelayout.txt
+
